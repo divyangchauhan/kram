@@ -1,0 +1,60 @@
+{
+  "name": "kram-formatter",
+  "displayName": "Kram Formatter",
+  "description": "Universal code formatter for multiple languages",
+  "version": "0.1.0",
+  "publisher": "divyangchauhan",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:python",
+    "onLanguage:javascript",
+    "onLanguage:typescript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kram.format",
+        "title": "Format Document with Kram"
+      }
+    ],
+    "configuration": {
+      "title": "Kram Formatter",
+      "properties": {
+        "kram.path": {
+          "type": "string",
+          "default": "kram",
+          "description": "Path to the Kram executable"
+        },
+        "kram.formatOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Format document on save"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divyangchauhan/kram.git"
+  }
+}
